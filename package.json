@@ -6,7 +6,9 @@
   "scripts": {
     "commit": "cz",
     "clean": "del ./build/*",
-    "build": "npm run clean && tsc"
+    "build": "npm run clean && tsc",
+    "lint": "eslint '**/*.ts'",
+    "lint:fix": "eslint '**/*.ts' --fix"
   },
   "repository": {
     "type": "git",
@@ -27,8 +29,13 @@
   },
   "homepage": "https://github.com/brayanarrieta/http-statusify#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
     "cz-conventional-changelog": "^3.3.0",
     "del-cli": "^4.0.1",
+    "eslint": "^8.5.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
     "typescript": "^4.5.4"
   },
   "config": {
