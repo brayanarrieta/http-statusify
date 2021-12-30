@@ -1,0 +1,35 @@
+{
+  "name": "http-statusify",
+  "version": "1.0.0",
+  "description": "Package includes all Official HTTP Response Status Codes",
+  "main": "index.js",
+  "scripts": {
+    "commit": "cz"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brayanarrieta/http-statusify.git"
+  },
+  "keywords": [
+    "node",
+    "client",
+    "http",
+    "HttpStatus",
+    "status",
+    "codes"
+  ],
+  "author": "brayanarrieta",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brayanarrieta/http-statusify/issues"
+  },
+  "homepage": "https://github.com/brayanarrieta/http-statusify#readme",
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
