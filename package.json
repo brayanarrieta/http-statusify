@@ -4,7 +4,9 @@
   "description": "Package includes all Official HTTP Response Status Codes",
   "main": "index.js",
   "scripts": {
-    "commit": "cz"
+    "commit": "cz",
+    "clean": "del ./build/*",
+    "build": "npm run clean && tsc"
   },
   "repository": {
     "type": "git",
@@ -25,7 +27,9 @@
   },
   "homepage": "https://github.com/brayanarrieta/http-statusify#readme",
   "devDependencies": {
-    "cz-conventional-changelog": "^3.3.0"
+    "cz-conventional-changelog": "^3.3.0",
+    "del-cli": "^4.0.1",
+    "typescript": "^4.5.4"
   },
   "config": {
     "commitizen": {
