@@ -2,10 +2,14 @@
   "name": "http-statusify",
   "version": "1.0.0",
   "description": "Package includes all Official HTTP Response Status Codes",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "commit": "cz",
-    "clean": "del ./build/*",
+    "clean": "del ./dist/*",
     "build": "npm run clean && tsc",
     "lint": "eslint '**/*.ts'",
     "lint:fix": "eslint '**/*.ts' --fix"
@@ -20,7 +24,8 @@
     "http",
     "HttpStatus",
     "status",
-    "codes"
+    "codes",
+    "browser"
   ],
   "author": "brayanarrieta",
   "license": "MIT",
@@ -35,7 +40,10 @@
     "del-cli": "^4.0.1",
     "eslint": "^8.5.0",
     "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.3",
+    "ts-morph": "^13.0.2",
+    "ts-node": "^10.4.0",
     "typescript": "^4.5.4"
   },
   "config": {
