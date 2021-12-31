@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { generateJSDocLink } from '../../helpers';
 import { STATUS_CODES } from '../../constants';
 import {
@@ -7,35 +8,41 @@ import {
 const PATH_FILENAME = 'src/StatusCodes.ts';
 
 export const generateStatusCodes = async () => {
-  const statusCodes = STATUS_CODES.map(
-    ({
-      code, key, jsdoc,
-    }) => {
-      const statusCode: any = { key, value: code };
+  try {
+    const statusCodes = STATUS_CODES.map(
+      ({
+        code, key, jsdoc,
+      }) => {
+        const statusCode: any = { key, value: code };
 
-      if (jsdoc) {
-        const docs = [jsdoc.documentation];
+        if (jsdoc) {
+          const docs = [jsdoc.documentation];
 
-        if (jsdoc.reference) {
-          docs.push(generateJSDocLink(jsdoc.reference, 'Official Documentation'));
+          if (jsdoc.reference) {
+            docs.push(generateJSDocLink(jsdoc.reference, 'Official Documentation'));
+          }
+          statusCode.docs = [docs.join('\n\n')];
         }
-        statusCode.docs = [docs.join('\n\n')];
-      }
 
-      return statusCode;
-    },
-  );
+        return statusCode;
+      },
+    );
 
-  const statusCodesMembers = generateEnumMembers(statusCodes);
+    const statusCodesMembers = generateEnumMembers(statusCodes);
 
-  generateFileWithEnum({
-    pathFileName: PATH_FILENAME,
-    enumName: 'StatusCodes',
-    overwrite: true,
-    members: statusCodesMembers,
-  });
+    generateFileWithEnum({
+      pathFileName: PATH_FILENAME,
+      enumName: 'StatusCodes',
+      overwrite: true,
+      members: statusCodesMembers,
+    });
 
-  disableEslintOnFile(PATH_FILENAME);
+    disableEslintOnFile(PATH_FILENAME);
 
-  await saveProjectChanges();
+    await saveProjectChanges();
+
+    console.log(`Successfully updated ${PATH_FILENAME}`);
+  } catch (error) {
+    console.log(`Error updating ${PATH_FILENAME}`);
+  }
 };
