@@ -12,7 +12,8 @@
     "clean": "del ./dist/*",
     "build": "npm run clean && tsc",
     "lint": "eslint '**/*.ts'",
-    "lint:fix": "eslint '**/*.ts' --fix"
+    "lint:fix": "eslint '**/*.ts' --fix",
+    "generator": "ts-node ./scripts/generator"
   },
   "repository": {
     "type": "git",
