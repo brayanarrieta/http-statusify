@@ -1,14 +1,12 @@
-name: Develop
+name: Main Deploy
 
 on:
   push:
-    branches: [develop]
-  pull_request:
-    branches: [ develop ]
+    branches: [main]
 
 jobs:
   develop:
-    name: Develop Branch Pipeline
+    name: Main Branch Deploy Pipeline
     runs-on: ubuntu-latest
 
     steps:
@@ -26,3 +24,8 @@ jobs:
       run: npm run test
     - name: Build
       run: npm run build
+    - name: Release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      run: npm run release
