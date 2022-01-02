@@ -1,1 +1,1 @@
-export const GREETING = 'Hello World';
+export { StatusCodes } from './StatusCodes';
