@@ -7,5 +7,5 @@ export interface StatusCodeObj {
       documentation: string;
     };
     isExperimental?: boolean;
-    origin?: string;
+    origin: string;
   }

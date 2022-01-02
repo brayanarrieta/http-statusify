@@ -12,9 +12,13 @@ const getRegex = () => new RegExp(`${START_PIVOT}(.|\n)*?${END_PIVOT}`, 'g');
 export const generateStatusCodesMarkdownTable = async () => {
   try {
     const table = markdownTable([
-      ['HTTP Status Code', 'Key', 'Description'],
+      ['HTTP Status Code', 'Key', 'Description', 'Origin'],
       ...STATUS_CODES.map(
-        ({ code, key, description }: StatusCodeObj) => ([code.toString(), key, description]),
+        ({
+          code, key, description, origin,
+        }: StatusCodeObj) => (
+          [code.toString(), key, description, origin]
+        ),
       ),
     ]);
 

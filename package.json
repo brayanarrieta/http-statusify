@@ -1,7 +1,7 @@
 {
   "name": "http-statusify",
   "version": "1.0.0",
-  "description": "Package includes all Official HTTP Response Status Codes and others.",
+  "description": "Package includes all Official HTTP Response Status Codes and others unofficial.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
