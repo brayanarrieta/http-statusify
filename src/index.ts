@@ -1,1 +1,1 @@
-export { StatusCodes } from './StatusCodes';
+export * as StatusCodes from './StatusCodes';

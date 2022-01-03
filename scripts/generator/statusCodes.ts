@@ -2,7 +2,7 @@
 import { generateJSDocLink } from '../../helpers';
 import { STATUS_CODES } from '../../constants';
 import {
-  disableEslintOnFile, generateEnumMembers, generateFileWithEnum, saveProjectChanges,
+  disableEslintOnFile, generateConstantsStructures, generateFileWithConstants, saveProjectChanges,
 } from './typescriptCompiler';
 
 const PATH_FILENAME = 'src/StatusCodes.ts';
@@ -28,11 +28,10 @@ export const generateStatusCodes = async () => {
       },
     );
 
-    const statusCodesMembers = generateEnumMembers(statusCodes);
+    const statusCodesMembers = generateConstantsStructures(statusCodes);
 
-    generateFileWithEnum({
+    generateFileWithConstants({
       pathFileName: PATH_FILENAME,
-      enumName: 'StatusCodes',
       overwrite: true,
       members: statusCodesMembers,
     });
