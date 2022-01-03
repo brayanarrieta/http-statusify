@@ -1,4 +1,4 @@
-import { StatusCodes } from './StatusCodes';
+import * as StatusCodes from './StatusCodes';
 
 describe('StatusCodes', () => {
   it('should export the correct structure', () => {
